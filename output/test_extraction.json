@@ -1,0 +1,1096 @@
+{
+  "pdf_path": "C:\\PDFtoPPT\\input\\osi_model.pdf",
+  "title": "osi_model",
+  "page_count": 15,
+  "pages": [
+    {
+      "page": 1,
+      "text": "The OSI (Open Systems Interconnection) Model is a set of rules\nthat explains how different computer systems communicate over a\nnetwork. OSI Model was developed by the International\nOrganization for Standardization (ISO). The OSI Model consists of\n7 layers and each layer has specific functions and responsibilities.\nThis layered approach makes it easier for different devices and\ntechnologies to work together.\nNote: OSI Model provides a clear structure for datatransmission and managing network issues. The OSI Model\nis widely used as a reference to understand how network\nsystems function.\nLayer 1: Physical Layer\n3 / 8\nWhat is OSI Model? - Layers of OSI Model\nLast Updated : 16 Dec, 2025\nCN Tutorial Interview Questions Quizzes Gate OSI Model TCP-IP Network Security COA TOC Compiler Design\nSign InSearch... Courses Tutorials Interview Prep",
+      "char_count": 843
+    },
+    {
+      "page": 2,
+      "text": "The lowest layer of the OSI reference model is the Physical Layer.\nIt is responsible for the actual physical connection between the\ndevices. The physical layer contains information in the form of\nbits.\nPhysical Layer is responsible for transmitting individual bits\nfrom one node to the next.\nWhen receiving data, this layer will get the signal received and\nconvert it into 0s and 1s and send them to the Data Link layer,\nwhich will put the frame back together.\nCommon physical layer devices are Hub, Repeater, Modem,\nand Cables.\nPhysical Layer\nFunctions of the Physical Layer\nBit Synchronization: The physical layer provides the\nsynchronization of the bits by providing a clock. This clock\ncontrols both sender and receiver thus providing\nsynchronization at the bit level.\nBit Rate Control: The Physical layer also defines the\ntransmission rate i.e. the number of bits sent per second.\nPhysical Topologies: Physical layer specifies how the different,\ndevices/nodes are arranged in a network i.e. bus topology, star\ntopology, or mesh topology.",
+      "char_count": 1042
+    },
+    {
+      "page": 3,
+      "text": "Transmission Mode: Physical layer also defines how the data\nflows between the two connected devices. The various\ntransmission modes possible are Simplex, half-duplex and full\nduplex.\nLayer 2: Data Link Layer (DLL)\nThe data link layer is responsible for the node-to-node delivery of\nthe message. The main function of this layer is to make sure data\ntransfer is error-free from one node to another, over the physical\nlayer.\nWhen a packet arrives in a network, it is the responsibility of\nthe DLL to transmit it to the Host using its MAC address.\nPacket in the Data Link layer is referred to as Frame. Switches\nand Bridges are common Data Link Layer devices.\nThe packet received from the Network layer is further divided\ninto frames depending on the frame size of the NIC (Network\nInterface Card). DLL also encapsulates Sender and Receiver’s\nMAC address in the header.\nThe Receiver’s MAC address is obtained by placing an ARP\n(Address Resolution Protocol) request onto the wire asking,\n\"Who has that IP address?\" and the destination host will reply\nwith its MAC address.\nSublayers of Data Link Layer\nLogical Link Control (LLC)\nMedia Access Control (MAC)\nFunctions of the Data Link Layer",
+      "char_count": 1183
+    },
+    {
+      "page": 4,
+      "text": "Framing: Framing is a function of the data link layer. It provides\na way for a sender to transmit a set of bits that are meaningful\nto the receiver. This can be accomplished by attaching special\nbit patterns to the beginning and end of the frame.\nPhysical Addressing: After creating frames, the Data link layer\nadds physical addresses (MAC addresses) of the sender and/or\nreceiver in the header of each frame.\nError Control: The data link layer provides the mechanism of\nerror control in which it detects and retransmits damaged or\nlost frames.\nFlow Control: The data rate must be constant on both sides\nelse the data may get corrupted thus, flow control coordinates\nthe amount of data that can be sent before receiving an\nacknowledgment.\nAccess Control: When a single communication channel is\nshared by multiple devices, the MAC sub-layer of the data link\nlayer helps to determine which device has control over the\nchannel at a given time.\nLayer 3: Network Layer\nThe Network Layer works for the transmission of data from one\nhost to the other located in different networks. It also takes care of\npacket routing i.e. selection of the shortest path to transmit the\npacket, from the number of routes available.\nThe sender and receiver's IP address are placed in the header\nby the network layer. Segment in the Network layer is referred\nto as Packet.\nNetwork layer is implemented by networking devices such as\nrouters and switches.\nFunctions of the Network Layer",
+      "char_count": 1459
+    },
+    {
+      "page": 5,
+      "text": "Routing: The network layer protocols determine which route is\nsuitable from source to destination. This function of the\nnetwork layer is known as routing.\nLogical Addressing: To identify each device inter-network\nuniquely, the network layer defines an addressing scheme. The\nsender and receiver’s IP addresses are placed in the header by\nthe network layer. Such an address distinguishes each device\nuniquely and universally.\nLayer 4: Transport Layer\nThe Transport Layer provides services to the application layer and\ntakes services from the network layer. The data in the transport\nlayer is referred to as Segments. It is responsible for the end-toend delivery of the complete message.\nThe transport layer also provides the acknowledgment of the\nsuccessful data transmission and re-transmits the data if an\nerror is found.\nProtocols used in Transport Layer are TCP, UDPNetBIOS,\nPPTP.\nAt the sender's side, the transport layer receives the formatted\ndata from the upper layers, performs Segmentation, and also\nimplements Flow and error control to ensure proper data\ntransmission.\nIt also adds Source and Destination port number in its header\nand forwards the segmented data to the Network Layer.\nGenerally, this destination port number is configured, either by\ndefault or manually.\nExample: when a web application requests a web server, it\ntypically uses port number 80, because this is the default port",
+      "char_count": 1402
+    },
+    {
+      "page": 6,
+      "text": "assigned to web applications. Many applications have default\nports assigned.\nAt the Receiver’s side, Transport Layer reads the port number\nfrom its header and forwards the Data which it has received to\nthe respective application. It also performs sequencing and\nreassembling of the segmented data.\nFunctions of the Transport Layer\nSegmentation and Reassembly: This layer accepts the\nmessage from the (session) layer and breaks the message into\nsmaller units. Each of the segments produced has a header\nassociated with it. The transport layer at the destination\nstation reassembles the message.\nService Point Addressing: To deliver the message to the\ncorrect process, the transport layer header includes a type of\naddress called service point address or port address. Thus, by\nspecifying this address, the transport layer makes sure that the\nmessage is delivered to the correct process.\nServices Provided by Transport Layer\nConnection-Oriented Service\nConnectionless Service\nLayer 5: Session Layer\nSession Layer in the OSI Model is responsible for the\nestablishment of connections, management of connections,\nterminations of sessions between two devices. It also provides\nauthentication and security. Protocols used in the Session Layer\nare NetBIOS, PPTP.",
+      "char_count": 1254
+    },
+    {
+      "page": 7,
+      "text": "Functions of the Session Layer\nSession Establishment, Maintenance, and Termination: The\nlayer allows the two processes to establish, use, and terminate\na connection.\nSynchronization: This layer allows a process to add\ncheckpoints that are considered synchronization points in the\ndata. These synchronization points help to identify the error so\nthat the data is re-synchronized properly, and ends of the\nmessages are not cut prematurely, and data loss is avoided.\nDialog Controller: The session layer allows two systems to\nstart communication with each other in half-duplex or full\nduplex.\nExample\nLet us consider a scenario where a user wants to send a message\nthrough some Messenger application running in their browser.\nThe “Messenger” here acts as the application layer which\nprovides the user with an interface to create the data. This\nmessage or so-called Data is compressed, optionally encrypted (if\nthe data is sensitive), and converted into bits (0’s and 1’s) so that\nit can be transmitted.\nLayer 6: Presentation Layer\nThePresentation Layer is also called the Translation layer. The\ndata from the application layer is extracted here and manipulated",
+      "char_count": 1157
+    },
+    {
+      "page": 8,
+      "text": "as per the required format to transmit over the network. Protocols\nused in the Presentation Layer are TLS/SSL (Transport Layer\nSecurity / Secure Sockets Layer).JPEG, MPEG, GIF, are standards\nor formats used for encoding data, which is part of the\npresentation layer’s role.\nFunctions of the Presentation Layer\nTranslation: For example, ASCII to EBCDIC.\nEncryption/ Decryption: Data encryption translates the data\ninto another form or code. The encrypted data is known as the\nciphertext, and the decrypted data is known as plain text. A\nkey value is used for encrypting as well as decrypting data.\nCompression: Reduces the number of bits that need to be\ntransmitted on the network.\nLayer 7: Application Layer\nAt the very top of the OSI Reference Model stack of layers, we\nfind the Application Layer which is implemented by the network\napplications. These applications produce the data to be\ntransferred over the network.\nThis layer also serves as a window for the application services\nto access the network and for displaying the received\ninformation to the user.\nProtocols used in the Application layer are SMTP, FTP, DNS,\netc.",
+      "char_count": 1127
+    },
+    {
+      "page": 9,
+      "text": "Application Layer\nFunctions of the Application Layer\nThe main functions of the application layer are given below.\nNetwork Virtual Terminal (NVT): It allows a user to log on to\na remote host.\nFile Transfer Access and Management (FTAM): This\napplication allows a user to access files in a remote host,\nretrieve files in a remote host, and manage or control files from\na remote computer.\nMail Services: Provide email service.\nDirectory Services: This application provides distributed\ndatabase sources and access for global information about\nvarious objects and services.\nHow Data Flows in the OSI Model?\nWhen we transfer information from one device to another, it\ntravels through 7 layers of OSI model. First data travels down\nthrough 7 layers from the sender's end and then climbs back 7\nlayers on the receiver's end. Data flows through the OSI model in\na step-by-step process:\nApplication Layer: Applications create the data.\nPresentation Layer: Data is formatted and encrypted.\nSession Layer: Connections are established and managed.",
+      "char_count": 1033
+    },
+    {
+      "page": 10,
+      "text": "Transport Layer: Data is broken into segments for reliable\ndelivery.\nNetwork Layer: Segments are packaged into packets and\nrouted.\nData Link Layer: Packets are framed and sent to the next\ndevice.\nPhysical Layer: Frames are converted into bits and transmitted\nphysically.\nEach layer adds specific information to ensure the data reaches its\ndestination correctly, and these steps are reversed upon arrival.\nWe can understand how data flows through OSI Model with the\nhelp of an example mentioned below. Let us suppose, Person A\nsends an e-mail to his friend Person B.\nStep 1: Person A interacts with e-mail application like Gmail,\noutlook, etc. Writes his email to send. (This happens at\nApplication Layer).\nStep 2: At Presentation Layer, Mail application prepares for\ndata transmission like encrypting data and formatting it for\ntransmission.\n1 / 8",
+      "char_count": 847
+    },
+    {
+      "page": 11,
+      "text": "Step 3: At Session Layer, there is a connection established\nbetween the sender and receiver on the internet.\nStep 4: At Transport Layer, Email data is broken into smaller\nsegments. It adds sequence number and error-checking\ninformation to maintain the reliability of the information.\nStep 5: At Network Layer, addressing of packets is done in\norder to find the best route for transfer.\nStep 6: At Data Link Layer, data packets are encapsulated into\nframes, then MAC address is added for local devices and then\nit checks for error using error detection.\nStep 7: At Physical Layer, Frames are transmitted in the form\nof electrical/ optical signals over a physical network medium\nlike ethernet cable or WiFi.\nAfter the email reaches the receiver i.e. Person B, the process will\nreverse and decrypt the e-mail content. At last, the email will be\nshown on Person B email client.",
+      "char_count": 873
+    },
+    {
+      "page": 12,
+      "text": "OSI Layers\nProtocols Used in the OSI Layers\nLayer Working Protocol\nData Unit\nProtocols\nPhysical\nLayer\nEstablishing\nPhysical\nConnections\nbetween Devices.\nBits\nUSB,\nSONET/SD\nH, etc.\nDataLink\nLayer\nNode to Node\nDelivery of\nMessage.\nFrames Ethernet,\nPPP, etc.\nNetwork\nLayer\nTransmission of\ndata from one host\nto another, located\nin different\nnetworks.\nPackets\nIP, ICMP,\nIGMP,\nOSPF, etc.\nTransport\nLayer\nTake Service from\nNetwork Layer and\nprovide it to the\nApplication Layer.\nSegments\n(for TCP) or\nDatagrams\n(for UDP)\nTCP, UDP,\nSCTP, etc.\nSession\nLayer\nEstablishes\nConnection,\nMaintenance,\nEnsures\nData NetBIOS,\nRPC, PPTP,\netc.",
+      "char_count": 623
+    },
+    {
+      "page": 13,
+      "text": "Layer Working Protocol\nData Unit\nProtocols\nAuthentication and\nEnsures security.\nPresentation\nLayer\nData from the\napplication layer is\nextracted and\nmanipulated in the\nrequired format for\ntransmission.\nData TLS/SSL,\nMIME, etc.\nApplication\nLayer\nHelps in identifying\nthe client and\nsynchronizing\ncommunication.\nData\nFTP, SMTP,\nDNS,\nDHCP, etc.\nWhy Does the OSI Model Matter\nThe OSI Model matters because it provides the user a clear\nstructure of \"how the data moves in the network?\". As the OSI\nModel consists of 7 layers, each layer has its specific role, and due\nto which it helps in understanding, identifying and solving the\ncomplex network problems easily by focusing on one of the layers\nnot the entire network.\nNote: As the modern Internet does not prefer the OSI\nModel, but still, the OSI Model is still very helpful for\nsolving network problems. It helps people understandingnetwork concepts very easily.",
+      "char_count": 910
+    },
+    {
+      "page": 14,
+      "text": " \n\n\nOS\nan\nTCIP\nMo\n(P\n1)\nOSan\nTC\nIP\nMo\n(P2)\nInt\nto \nMo\nCo\nOSI and TCP IP Model (Part 1)\nVisit Course\nSuggested Quiz 7 Questions\nLogin to View Explanation 1/7 < Previous Next >\nWhich OSI layer is responsible for bit rate control and transmission\nmode (simplex, half-duplex, full-duplex)?\nData Link Layer\nNetwork Layer\nTransport Layer\nPhysical Layer\nA\nB\nC\nD",
+      "char_count": 358
+    },
+    {
+      "page": 15,
+      "text": "Comment Kunda… Follow\nArticle Tags: Computer Networks\nExplore\nComputer Network Basics\nPhysical Layer\nData Link Layer\nNetwork Layer\nTransport Layer\nSession Layer & Presentation Layer\nApplication Layer\nAdvanced Topics\nPractice\nK\n 1.31k\nCorporate & Communications Address:\nA-143, 7th Floor, Sovereign CorporateTower, Sector- 136, Noida, Uttar\nPradesh (201305)\nRegistered Address:\nK 061, Tower K, Gulshan VivanteApartment, Sector 137, Noida, Gautam\nBuddh Nagar, Uttar Pradesh, 201305\nCompany\nAbout Us\nLegal\nPrivacy Policy\nContact Us\nAdvertise with\nus\nGFG Corporate\nSolution\nCampus Training\nProgram\nExplore\nPOTD\nJob-A-Thon\nBlogs\nNation Skill Up\nTutorials\nProgramming\nLanguages\nDSA\nWeb Technology\nAI, ML & Data\nScience\nDevOps\nCS Core\nSubjects\nInterview\nPreparation\nSoftware and\nTools\nCourses\nML and Data\nScience\nDSA and\nPlacements\nWeb\nDevelopment\nProgramming\nLanguages\nDevOps & Cloud\nGATE\nTrending\nTechnologies\nVideos\nDSA\nPython\nJava\nC++\nWeb\nDevelopment\nData Science\nCS Subjects\nPreparation\nCorner\nInterview Corner\nAptitude\nPuzzles\nGfG 160\nSystem Design\n@GeeksforGeeks, Sanchhaya Education Private Limited,All rights reserved\nDo Not Sell or Share My Personal Information",
+      "char_count": 1164
+    }
+  ],
+  "paragraphs": [
+    {
+      "paragraph_id": 0,
+      "page": 1,
+      "text": "The OSI (Open Systems Interconnection) Model is a set of rules that explains how different computer systems communicate over a network. OSI Model was developed by the International Organization for Standardization (ISO). The OSI Model consists of 7 layers and each layer has specific functions and responsibilities. This layered approach makes it easier for different devices and technologies to work together. Note: OSI Model provides a clear structure for datatransmission and managing network issues. The OSI Model is widely used as a reference to understand how network systems function. Layer 1: Physical Layer 3 / 8 What is OSI Model? - Layers of OSI Model Last Updated : 16 Dec, 2025 CN Tutorial Interview Questions Quizzes Gate OSI Model TCP-IP Network Security COA TOC Compiler Design Sign InSearch... Courses Tutorials Interview Prep",
+      "char_count": 843
+    },
+    {
+      "paragraph_id": 1,
+      "page": 2,
+      "text": "The lowest layer of the OSI reference model is the Physical Layer. It is responsible for the actual physical connection between the devices. The physical layer contains information in the form of bits. Physical Layer is responsible for transmitting individual bits from one node to the next. When receiving data, this layer will get the signal received and convert it into 0s and 1s and send them to the Data Link layer, which will put the frame back together. Common physical layer devices are Hub, Repeater, Modem, and Cables. Physical Layer Functions of the Physical Layer Bit Synchronization: The physical layer provides the synchronization of the bits by providing a clock. This clock controls both sender and receiver thus providing synchronization at the bit level. Bit Rate Control: The Physical layer also defines the transmission rate i.e. the number of bits sent per second. Physical Topologies: Physical layer specifies how the different, devices/nodes are arranged in a network i.e. bus topology, star topology, or mesh topology.",
+      "char_count": 1042
+    },
+    {
+      "paragraph_id": 2,
+      "page": 3,
+      "text": "Transmission Mode: Physical layer also defines how the data flows between the two connected devices. The various transmission modes possible are Simplex, half-duplex and full duplex. Layer 2: Data Link Layer (DLL) The data link layer is responsible for the node-to-node delivery of the message. The main function of this layer is to make sure data transfer is error-free from one node to another, over the physical layer. When a packet arrives in a network, it is the responsibility of the DLL to transmit it to the Host using its MAC address. Packet in the Data Link layer is referred to as Frame. Switches and Bridges are common Data Link Layer devices. The packet received from the Network layer is further divided into frames depending on the frame size of the NIC (Network Interface Card). DLL also encapsulates Sender and Receiver’s MAC address in the header. The Receiver’s MAC address is obtained by placing an ARP (Address Resolution Protocol) request onto the wire asking, \"Who has that IP address?\" and the destination host will reply with its MAC address. Sublayers of Data Link Layer Logical Link Control (LLC) Media Access Control (MAC) Functions of the Data Link Layer",
+      "char_count": 1183
+    },
+    {
+      "paragraph_id": 3,
+      "page": 4,
+      "text": "Framing: Framing is a function of the data link layer. It provides a way for a sender to transmit a set of bits that are meaningful to the receiver. This can be accomplished by attaching special bit patterns to the beginning and end of the frame. Physical Addressing: After creating frames, the Data link layer adds physical addresses (MAC addresses) of the sender and/or receiver in the header of each frame. Error Control: The data link layer provides the mechanism of error control in which it detects and retransmits damaged or lost frames. Flow Control: The data rate must be constant on both sides else the data may get corrupted thus, flow control coordinates the amount of data that can be sent before receiving an acknowledgment. Access Control: When a single communication channel is shared by multiple devices, the MAC sub-layer of the data link layer helps to determine which device has control over the channel at a given time. Layer 3: Network Layer The Network Layer works for the transmission of data from one host to the other located in different networks. It also takes care of packet routing i.e. selection of the shortest path to transmit the packet, from the number of routes available. The sender and receiver's IP address are placed in the header by the network layer. Segment in the Network layer is referred to as Packet. Network layer is implemented by networking devices such as routers and switches. Functions of the Network Layer",
+      "char_count": 1459
+    },
+    {
+      "paragraph_id": 4,
+      "page": 5,
+      "text": "Routing: The network layer protocols determine which route is suitable from source to destination. This function of the network layer is known as routing. Logical Addressing: To identify each device inter-network uniquely, the network layer defines an addressing scheme. The sender and receiver’s IP addresses are placed in the header by the network layer. Such an address distinguishes each device uniquely and universally. Layer 4: Transport Layer The Transport Layer provides services to the application layer and takes services from the network layer. The data in the transport layer is referred to as Segments. It is responsible for the end-toend delivery of the complete message. The transport layer also provides the acknowledgment of the successful data transmission and re-transmits the data if an error is found. Protocols used in Transport Layer are TCP, UDPNetBIOS, PPTP. At the sender's side, the transport layer receives the formatted data from the upper layers, performs Segmentation, and also implements Flow and error control to ensure proper data transmission. It also adds Source and Destination port number in its header and forwards the segmented data to the Network Layer. Generally, this destination port number is configured, either by default or manually. Example: when a web application requests a web server, it typically uses port number 80, because this is the default port",
+      "char_count": 1402
+    },
+    {
+      "paragraph_id": 5,
+      "page": 6,
+      "text": "assigned to web applications. Many applications have default ports assigned. At the Receiver’s side, Transport Layer reads the port number from its header and forwards the Data which it has received to the respective application. It also performs sequencing and reassembling of the segmented data. Functions of the Transport Layer Segmentation and Reassembly: This layer accepts the message from the (session) layer and breaks the message into smaller units. Each of the segments produced has a header associated with it. The transport layer at the destination station reassembles the message. Service Point Addressing: To deliver the message to the correct process, the transport layer header includes a type of address called service point address or port address. Thus, by specifying this address, the transport layer makes sure that the message is delivered to the correct process. Services Provided by Transport Layer Connection-Oriented Service Connectionless Service Layer 5: Session Layer Session Layer in the OSI Model is responsible for the establishment of connections, management of connections, terminations of sessions between two devices. It also provides authentication and security. Protocols used in the Session Layer are NetBIOS, PPTP.",
+      "char_count": 1254
+    },
+    {
+      "paragraph_id": 6,
+      "page": 7,
+      "text": "Functions of the Session Layer Session Establishment, Maintenance, and Termination: The layer allows the two processes to establish, use, and terminate a connection. Synchronization: This layer allows a process to add checkpoints that are considered synchronization points in the data. These synchronization points help to identify the error so that the data is re-synchronized properly, and ends of the messages are not cut prematurely, and data loss is avoided. Dialog Controller: The session layer allows two systems to start communication with each other in half-duplex or full duplex. Example Let us consider a scenario where a user wants to send a message through some Messenger application running in their browser. The “Messenger” here acts as the application layer which provides the user with an interface to create the data. This message or so-called Data is compressed, optionally encrypted (if the data is sensitive), and converted into bits (0’s and 1’s) so that it can be transmitted. Layer 6: Presentation Layer ThePresentation Layer is also called the Translation layer. The data from the application layer is extracted here and manipulated",
+      "char_count": 1157
+    },
+    {
+      "paragraph_id": 7,
+      "page": 8,
+      "text": "as per the required format to transmit over the network. Protocols used in the Presentation Layer are TLS/SSL (Transport Layer Security / Secure Sockets Layer).JPEG, MPEG, GIF, are standards or formats used for encoding data, which is part of the presentation layer’s role. Functions of the Presentation Layer Translation: For example, ASCII to EBCDIC. Encryption/ Decryption: Data encryption translates the data into another form or code. The encrypted data is known as the ciphertext, and the decrypted data is known as plain text. A key value is used for encrypting as well as decrypting data. Compression: Reduces the number of bits that need to be transmitted on the network. Layer 7: Application Layer At the very top of the OSI Reference Model stack of layers, we find the Application Layer which is implemented by the network applications. These applications produce the data to be transferred over the network. This layer also serves as a window for the application services to access the network and for displaying the received information to the user. Protocols used in the Application layer are SMTP, FTP, DNS, etc.",
+      "char_count": 1127
+    },
+    {
+      "paragraph_id": 8,
+      "page": 9,
+      "text": "Application Layer Functions of the Application Layer The main functions of the application layer are given below. Network Virtual Terminal (NVT): It allows a user to log on to a remote host. File Transfer Access and Management (FTAM): This application allows a user to access files in a remote host, retrieve files in a remote host, and manage or control files from a remote computer. Mail Services: Provide email service. Directory Services: This application provides distributed database sources and access for global information about various objects and services. How Data Flows in the OSI Model? When we transfer information from one device to another, it travels through 7 layers of OSI model. First data travels down through 7 layers from the sender's end and then climbs back 7 layers on the receiver's end. Data flows through the OSI model in a step-by-step process: Application Layer: Applications create the data. Presentation Layer: Data is formatted and encrypted. Session Layer: Connections are established and managed.",
+      "char_count": 1033
+    },
+    {
+      "paragraph_id": 9,
+      "page": 10,
+      "text": "Transport Layer: Data is broken into segments for reliable delivery. Network Layer: Segments are packaged into packets and routed. Data Link Layer: Packets are framed and sent to the next device. Physical Layer: Frames are converted into bits and transmitted physically. Each layer adds specific information to ensure the data reaches its destination correctly, and these steps are reversed upon arrival. We can understand how data flows through OSI Model with the help of an example mentioned below. Let us suppose, Person A sends an e-mail to his friend Person B. Step 1: Person A interacts with e-mail application like Gmail, outlook, etc. Writes his email to send. (This happens at Application Layer). Step 2: At Presentation Layer, Mail application prepares for data transmission like encrypting data and formatting it for transmission. 1 / 8",
+      "char_count": 847
+    },
+    {
+      "paragraph_id": 10,
+      "page": 11,
+      "text": "Step 3: At Session Layer, there is a connection established between the sender and receiver on the internet. Step 4: At Transport Layer, Email data is broken into smaller segments. It adds sequence number and error-checking information to maintain the reliability of the information. Step 5: At Network Layer, addressing of packets is done in order to find the best route for transfer. Step 6: At Data Link Layer, data packets are encapsulated into frames, then MAC address is added for local devices and then it checks for error using error detection. Step 7: At Physical Layer, Frames are transmitted in the form of electrical/ optical signals over a physical network medium like ethernet cable or WiFi. After the email reaches the receiver i.e. Person B, the process will reverse and decrypt the e-mail content. At last, the email will be shown on Person B email client.",
+      "char_count": 873
+    },
+    {
+      "paragraph_id": 11,
+      "page": 12,
+      "text": "OSI Layers Protocols Used in the OSI Layers Layer Working Protocol Data Unit Protocols Physical Layer Establishing Physical Connections between Devices. Bits USB, SONET/SD H, etc. DataLink Layer Node to Node Delivery of Message. Frames Ethernet, PPP, etc. Network Layer Transmission of data from one host to another, located in different networks. Packets IP, ICMP, IGMP, OSPF, etc. Transport Layer Take Service from Network Layer and provide it to the Application Layer. Segments (for TCP) or Datagrams (for UDP) TCP, UDP, SCTP, etc. Session Layer Establishes Connection, Maintenance, Ensures Data NetBIOS, RPC, PPTP, etc.",
+      "char_count": 623
+    },
+    {
+      "paragraph_id": 12,
+      "page": 13,
+      "text": "Layer Working Protocol Data Unit Protocols Authentication and Ensures security. Presentation Layer Data from the application layer is extracted and manipulated in the required format for transmission. Data TLS/SSL, MIME, etc. Application Layer Helps in identifying the client and synchronizing communication. Data FTP, SMTP, DNS, DHCP, etc. Why Does the OSI Model Matter The OSI Model matters because it provides the user a clear structure of \"how the data moves in the network?\". As the OSI Model consists of 7 layers, each layer has its specific role, and due to which it helps in understanding, identifying and solving the complex network problems easily by focusing on one of the layers not the entire network. Note: As the modern Internet does not prefer the OSI Model, but still, the OSI Model is still very helpful for solving network problems. It helps people understandingnetwork concepts very easily.",
+      "char_count": 910
+    },
+    {
+      "paragraph_id": 13,
+      "page": 14,
+      "text": "    OS an TCIP Mo (P 1) OSan TC IP Mo (P2) Int to Mo Co OSI and TCP IP Model (Part 1) Visit Course Suggested Quiz 7 Questions Login to View Explanation 1/7 < Previous Next > Which OSI layer is responsible for bit rate control and transmission mode (simplex, half-duplex, full-duplex)? Data Link Layer Network Layer Transport Layer Physical Layer A B C D",
+      "char_count": 357
+    },
+    {
+      "paragraph_id": 14,
+      "page": 15,
+      "text": "Comment Kunda… Follow Article Tags: Computer Networks Explore Computer Network Basics Physical Layer Data Link Layer Network Layer Transport Layer Session Layer & Presentation Layer Application Layer Advanced Topics Practice K 1.31k Corporate & Communications Address: A-143, 7th Floor, Sovereign CorporateTower, Sector- 136, Noida, Uttar Pradesh (201305) Registered Address: K 061, Tower K, Gulshan VivanteApartment, Sector 137, Noida, Gautam Buddh Nagar, Uttar Pradesh, 201305 Company About Us Legal Privacy Policy Contact Us Advertise with us GFG Corporate Solution Campus Training Program Explore POTD Job-A-Thon Blogs Nation Skill Up Tutorials Programming Languages DSA Web Technology AI, ML & Data Science DevOps CS Core Subjects Interview Preparation Software and Tools Courses ML and Data Science DSA and Placements Web Development Programming Languages DevOps & Cloud GATE Trending Technologies Videos DSA Python Java C++ Web Development Data Science CS Subjects Preparation Corner Interview Corner Aptitude Puzzles GfG 160 System Design @GeeksforGeeks, Sanchhaya Education Private Limited,All rights reserved Do Not Sell or Share My Personal Information",
+      "char_count": 1163
+    }
+  ],
+  "images": [
+    {
+      "image_id": "page_1_image_1",
+      "page": 1,
+      "path": "output\\osi_images\\page_1_image_1.png",
+      "xref": 9,
+      "width": 1326,
+      "height": 659,
+      "extension": "png",
+      "bbox": [
+        206.39999389648438,
+        301.67999267578125,
+        524.6400146484375,
+        459.8399963378906
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "This layered approach makes it easier for different devices and",
+      "nearby_context": [
+        "3 / 8",
+        "technologies to work together.",
+        "This layered approach makes it easier for different devices and"
+      ],
+      "description": "Image related to 'This layered approach makes it easier for different devices and'. Nearby text: 3 / 8 technologies to work together. This layered approach makes it easier for different devices and",
+      "description_source": "section_heading_and_context"
+    },
+    {
+      "image_id": "page_1_image_2",
+      "page": 1,
+      "path": "output\\osi_images\\page_1_image_2.png",
+      "xref": 11,
+      "width": 800,
+      "height": 401,
+      "extension": "png",
+      "bbox": [
+        207.89999389648438,
+        301.7249755859375,
+        523.125,
+        459.67498779296875
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "This layered approach makes it easier for different devices and",
+      "nearby_context": [
+        "3 / 8",
+        "technologies to work together.",
+        "This layered approach makes it easier for different devices and"
+      ],
+      "description": "Image related to 'This layered approach makes it easier for different devices and'. Nearby text: 3 / 8 technologies to work together. This layered approach makes it easier for different devices and",
+      "description_source": "section_heading_and_context"
+    },
+    {
+      "image_id": "page_2_image_1",
+      "page": 2,
+      "path": "output\\osi_images\\page_2_image_1.png",
+      "xref": 44,
+      "width": 800,
+      "height": 200,
+      "extension": "png",
+      "bbox": [
+        181.5749969482422,
+        236.92501831054688,
+        549.449951171875,
+        328.7250061035156
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "Common physical layer devices are Hub, Repeater, Modem,",
+      "nearby_context": [
+        "Physical Layer",
+        "and Cables.",
+        "Functions of the Physical Layer"
+      ],
+      "description": "Image related to 'Common physical layer devices are Hub, Repeater, Modem,'. Nearby text: Physical Layer and Cables. Functions of the Physical Layer",
+      "description_source": "section_heading_and_context"
+    },
+    {
+      "image_id": "page_2_image_2",
+      "page": 2,
+      "path": "output\\osi_images\\page_2_image_2.png",
+      "xref": 48,
+      "width": 960,
+      "height": 960,
+      "extension": "png",
+      "bbox": [
+        576.4500122070312,
+        418.49993896484375,
+        778.9500122070312,
+        620.9999389648438
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "Bit Synchronization: The physical layer provides the",
+      "nearby_context": [
+        "Bit Synchronization: The physical layer provides the",
+        "Functions of the Physical Layer",
+        "Physical Layer"
+      ],
+      "description": "Image related to 'Bit Synchronization: The physical layer provides the'. Nearby text: Bit Synchronization: The physical layer provides the Functions of the Physical Layer Physical Layer",
+      "description_source": "section_heading_and_context"
+    },
+    {
+      "image_id": "page_2_image_3",
+      "page": 2,
+      "path": "output\\osi_images\\page_2_image_3.png",
+      "xref": 49,
+      "width": 120,
+      "height": 120,
+      "extension": "png",
+      "bbox": [
+        768.1499633789062,
+        417.1499328613281,
+        780.2999877929688,
+        429.2999267578125
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "Bit Synchronization: The physical layer provides the",
+      "nearby_context": [
+        "Bit Synchronization: The physical layer provides the",
+        "controls both sender and receiver thus providing",
+        "synchronization at the bit level."
+      ],
+      "description": "Image related to 'Bit Synchronization: The physical layer provides the'. Nearby text: Bit Synchronization: The physical layer provides the controls both sender and receiver thus providing synchronization at the bit level.",
+      "description_source": "section_heading_and_context"
+    },
+    {
+      "image_id": "page_3_image_1",
+      "page": 3,
+      "path": "output\\osi_images\\page_3_image_1.png",
+      "xref": 62,
+      "width": 300,
+      "height": 600,
+      "extension": "png",
+      "bbox": [
+        576.4500122070312,
+        0.0,
+        778.9500122070312,
+        405.0
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": null,
+      "nearby_context": [
+        "with its MAC address.",
+        "Sublayers of Data Link Layer",
+        "Logical Link Control (LLC)"
+      ],
+      "description": "Image related to: with its MAC address. Sublayers of Data Link Layer Logical Link Control (LLC)",
+      "description_source": "nearby_context"
+    },
+    {
+      "image_id": "page_7_image_1",
+      "page": 7,
+      "path": "output\\osi_images\\page_7_image_1.png",
+      "xref": 95,
+      "width": 661,
+      "height": 202,
+      "extension": "png",
+      "bbox": [
+        181.5749969482422,
+        432.0002136230469,
+        549.4500122070312,
+        544.7252197265625
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "the data is sensitive), and converted into bits (0’s and 1’s) so that",
+      "nearby_context": [
+        "Layer 6: Presentation Layer",
+        "it can be transmitted.",
+        "ThePresentation Layer is also called the Translation layer. The"
+      ],
+      "description": "Image related to 'the data is sensitive), and converted into bits (0’s and 1’s) so that'. Nearby text: Layer 6: Presentation Layer it can be transmitted. ThePresentation Layer is also called the Translation layer. The",
+      "description_source": "section_heading_and_context"
+    },
+    {
+      "image_id": "page_9_image_1",
+      "page": 9,
+      "path": "output\\osi_images\\page_9_image_1.png",
+      "xref": 108,
+      "width": 800,
+      "height": 200,
+      "extension": "png",
+      "bbox": [
+        181.5749969482422,
+        0.0,
+        549.449951171875,
+        91.79999542236328
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": null,
+      "nearby_context": [
+        "Application Layer",
+        "Functions of the Application Layer",
+        "The main functions of the application layer are given below."
+      ],
+      "description": "Image related to: Application Layer Functions of the Application Layer The main functions of the application layer are given below.",
+      "description_source": "nearby_context"
+    },
+    {
+      "image_id": "page_10_image_1",
+      "page": 10,
+      "path": "output\\osi_images\\page_10_image_1.png",
+      "xref": 112,
+      "width": 1326,
+      "height": 659,
+      "extension": "png",
+      "bbox": [
+        206.39999389648438,
+        224.63998413085938,
+        524.6400146484375,
+        382.79998779296875
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "Each layer adds specific information to ensure the data reaches its",
+      "nearby_context": [
+        "1 / 8",
+        "destination correctly, and these steps are reversed upon arrival.",
+        "We can understand how data flows through OSI Model with the"
+      ],
+      "description": "Image related to 'Each layer adds specific information to ensure the data reaches its'. Nearby text: 1 / 8 destination correctly, and these steps are reversed upon arrival. We can understand how data flows through OSI Model with the",
+      "description_source": "section_heading_and_context"
+    },
+    {
+      "image_id": "page_10_image_2",
+      "page": 10,
+      "path": "output\\osi_images\\page_10_image_2.png",
+      "xref": 114,
+      "width": 800,
+      "height": 400,
+      "extension": "png",
+      "bbox": [
+        207.22499084472656,
+        224.77500915527344,
+        523.7999877929688,
+        382.7250061035156
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "Each layer adds specific information to ensure the data reaches its",
+      "nearby_context": [
+        "1 / 8",
+        "destination correctly, and these steps are reversed upon arrival.",
+        "We can understand how data flows through OSI Model with the"
+      ],
+      "description": "Image related to 'Each layer adds specific information to ensure the data reaches its'. Nearby text: 1 / 8 destination correctly, and these steps are reversed upon arrival. We can understand how data flows through OSI Model with the",
+      "description_source": "section_heading_and_context"
+    },
+    {
+      "image_id": "page_11_image_1",
+      "page": 11,
+      "path": "output\\osi_images\\page_11_image_1.png",
+      "xref": 117,
+      "width": 1042,
+      "height": 745,
+      "extension": "png",
+      "bbox": [
+        181.5749969482422,
+        334.1250305175781,
+        549.449951171875,
+        596.7000122070312
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "reverse and decrypt the e-mail content. At last, the email will be",
+      "nearby_context": [
+        "shown on Person B email client.",
+        "reverse and decrypt the e-mail content. At last, the email will be",
+        "After the email reaches the receiver i.e. Person B, the process will"
+      ],
+      "description": "Image related to 'reverse and decrypt the e-mail content. At last, the email will be'. Nearby text: shown on Person B email client. reverse and decrypt the e-mail content. At last, the email will be After the email reaches the receiver i.e. Person B, the process will",
+      "description_source": "section_heading_and_context"
+    },
+    {
+      "image_id": "page_14_image_1",
+      "page": 14,
+      "path": "output\\osi_images\\page_14_image_1.png",
+      "xref": 149,
+      "width": 320,
+      "height": 180,
+      "extension": "png",
+      "bbox": [
+        184.9499969482422,
+        5.400146484375,
+        292.95001220703125,
+        66.150146484375
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": null,
+      "nearby_context": [
+        "OS an TC IP Mo (P 2)",
+        "Int to Mo Co",
+        ""
+      ],
+      "description": "Image related to: OS an TC IP Mo (P 2) Int to Mo Co ",
+      "description_source": "nearby_context"
+    },
+    {
+      "image_id": "page_14_image_2",
+      "page": 14,
+      "path": "output\\osi_images\\page_14_image_2.png",
+      "xref": 151,
+      "width": 320,
+      "height": 180,
+      "extension": "png",
+      "bbox": [
+        184.9499969482422,
+        98.55014038085938,
+        292.95001220703125,
+        159.30014038085938
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "OS an TC IP Mo (P 1)",
+      "nearby_context": [
+        "OS an TC IP Mo (P 1)",
+        "Int to Mo Co",
+        ""
+      ],
+      "description": "Image related to 'OS an TC IP Mo (P 1)'. Nearby text: OS an TC IP Mo (P 1) Int to Mo Co ",
+      "description_source": "section_heading_and_context"
+    },
+    {
+      "image_id": "page_14_image_3",
+      "page": 14,
+      "path": "output\\osi_images\\page_14_image_3.png",
+      "xref": 153,
+      "width": 320,
+      "height": 180,
+      "extension": "png",
+      "bbox": [
+        184.9499969482422,
+        191.025146484375,
+        292.95001220703125,
+        251.775146484375
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "OS an TC IP Mo (P 2)",
+      "nearby_context": [
+        "OSI and TCP IP Model (Part 1)",
+        "OS an TC IP Mo (P 2)",
+        "Visit Course"
+      ],
+      "description": "Image related to 'OS an TC IP Mo (P 2)'. Nearby text: OSI and TCP IP Model (Part 1) OS an TC IP Mo (P 2) Visit Course",
+      "description_source": "section_heading_and_context"
+    },
+    {
+      "image_id": "page_14_image_4",
+      "page": 14,
+      "path": "output\\osi_images\\page_14_image_4.png",
+      "xref": 154,
+      "width": 640,
+      "height": 480,
+      "extension": "png",
+      "bbox": [
+        331.42498779296875,
+        47.24998474121094,
+        544.0499877929688,
+        206.54998779296875
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "",
+      "nearby_context": [
+        "",
+        "",
+        " "
+      ],
+      "description": "Image related to ''. Nearby text:    ",
+      "description_source": "section_heading_and_context"
+    },
+    {
+      "image_id": "page_15_image_1",
+      "page": 15,
+      "path": "output\\osi_images\\page_15_image_1.png",
+      "xref": 191,
+      "width": 230,
+      "height": 32,
+      "extension": "png",
+      "bbox": [
+        27.0,
+        147.1509246826172,
+        182.25,
+        168.7509307861328
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "Explore",
+      "nearby_context": [
+        "Physical Layer",
+        "Legal",
+        "Job-A-Thon"
+      ],
+      "description": "Image related to 'Explore'. Nearby text: Physical Layer Legal Job-A-Thon",
+      "description_source": "section_heading_and_context"
+    },
+    {
+      "image_id": "page_15_image_2",
+      "page": 15,
+      "path": "output\\osi_images\\page_15_image_2.png",
+      "xref": 218,
+      "width": 101,
+      "height": 30,
+      "extension": "png",
+      "bbox": [
+        195.0749969482422,
+        307.8009033203125,
+        262.57501220703125,
+        327.37591552734375
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "Program",
+      "nearby_context": [
+        "Program",
+        "Interview",
+        "GATE"
+      ],
+      "description": "Image related to 'Program'. Nearby text: Program Interview GATE",
+      "description_source": "section_heading_and_context"
+    },
+    {
+      "image_id": "page_15_image_3",
+      "page": 15,
+      "path": "output\\osi_images\\page_15_image_3.png",
+      "xref": 220,
+      "width": 102,
+      "height": 30,
+      "extension": "png",
+      "bbox": [
+        270.0,
+        307.8009033203125,
+        336.8249816894531,
+        327.37591552734375
+      ],
+      "alt_text": null,
+      "caption": null,
+      "section_heading": "Program",
+      "nearby_context": [
+        "Program",
+        "Interview",
+        "GATE"
+      ],
+      "description": "Image related to 'Program'. Nearby text: Program Interview GATE",
+      "description_source": "section_heading_and_context"
+    }
+  ],
+  "images_by_page": {
+    "1": [
+      {
+        "image_id": "page_1_image_1",
+        "page": 1,
+        "path": "output\\osi_images\\page_1_image_1.png",
+        "xref": 9,
+        "width": 1326,
+        "height": 659,
+        "extension": "png",
+        "bbox": [
+          206.39999389648438,
+          301.67999267578125,
+          524.6400146484375,
+          459.8399963378906
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "This layered approach makes it easier for different devices and",
+        "nearby_context": [
+          "3 / 8",
+          "technologies to work together.",
+          "This layered approach makes it easier for different devices and"
+        ],
+        "description": "Image related to 'This layered approach makes it easier for different devices and'. Nearby text: 3 / 8 technologies to work together. This layered approach makes it easier for different devices and",
+        "description_source": "section_heading_and_context"
+      },
+      {
+        "image_id": "page_1_image_2",
+        "page": 1,
+        "path": "output\\osi_images\\page_1_image_2.png",
+        "xref": 11,
+        "width": 800,
+        "height": 401,
+        "extension": "png",
+        "bbox": [
+          207.89999389648438,
+          301.7249755859375,
+          523.125,
+          459.67498779296875
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "This layered approach makes it easier for different devices and",
+        "nearby_context": [
+          "3 / 8",
+          "technologies to work together.",
+          "This layered approach makes it easier for different devices and"
+        ],
+        "description": "Image related to 'This layered approach makes it easier for different devices and'. Nearby text: 3 / 8 technologies to work together. This layered approach makes it easier for different devices and",
+        "description_source": "section_heading_and_context"
+      }
+    ],
+    "2": [
+      {
+        "image_id": "page_2_image_1",
+        "page": 2,
+        "path": "output\\osi_images\\page_2_image_1.png",
+        "xref": 44,
+        "width": 800,
+        "height": 200,
+        "extension": "png",
+        "bbox": [
+          181.5749969482422,
+          236.92501831054688,
+          549.449951171875,
+          328.7250061035156
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "Common physical layer devices are Hub, Repeater, Modem,",
+        "nearby_context": [
+          "Physical Layer",
+          "and Cables.",
+          "Functions of the Physical Layer"
+        ],
+        "description": "Image related to 'Common physical layer devices are Hub, Repeater, Modem,'. Nearby text: Physical Layer and Cables. Functions of the Physical Layer",
+        "description_source": "section_heading_and_context"
+      },
+      {
+        "image_id": "page_2_image_2",
+        "page": 2,
+        "path": "output\\osi_images\\page_2_image_2.png",
+        "xref": 48,
+        "width": 960,
+        "height": 960,
+        "extension": "png",
+        "bbox": [
+          576.4500122070312,
+          418.49993896484375,
+          778.9500122070312,
+          620.9999389648438
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "Bit Synchronization: The physical layer provides the",
+        "nearby_context": [
+          "Bit Synchronization: The physical layer provides the",
+          "Functions of the Physical Layer",
+          "Physical Layer"
+        ],
+        "description": "Image related to 'Bit Synchronization: The physical layer provides the'. Nearby text: Bit Synchronization: The physical layer provides the Functions of the Physical Layer Physical Layer",
+        "description_source": "section_heading_and_context"
+      },
+      {
+        "image_id": "page_2_image_3",
+        "page": 2,
+        "path": "output\\osi_images\\page_2_image_3.png",
+        "xref": 49,
+        "width": 120,
+        "height": 120,
+        "extension": "png",
+        "bbox": [
+          768.1499633789062,
+          417.1499328613281,
+          780.2999877929688,
+          429.2999267578125
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "Bit Synchronization: The physical layer provides the",
+        "nearby_context": [
+          "Bit Synchronization: The physical layer provides the",
+          "controls both sender and receiver thus providing",
+          "synchronization at the bit level."
+        ],
+        "description": "Image related to 'Bit Synchronization: The physical layer provides the'. Nearby text: Bit Synchronization: The physical layer provides the controls both sender and receiver thus providing synchronization at the bit level.",
+        "description_source": "section_heading_and_context"
+      }
+    ],
+    "3": [
+      {
+        "image_id": "page_3_image_1",
+        "page": 3,
+        "path": "output\\osi_images\\page_3_image_1.png",
+        "xref": 62,
+        "width": 300,
+        "height": 600,
+        "extension": "png",
+        "bbox": [
+          576.4500122070312,
+          0.0,
+          778.9500122070312,
+          405.0
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": null,
+        "nearby_context": [
+          "with its MAC address.",
+          "Sublayers of Data Link Layer",
+          "Logical Link Control (LLC)"
+        ],
+        "description": "Image related to: with its MAC address. Sublayers of Data Link Layer Logical Link Control (LLC)",
+        "description_source": "nearby_context"
+      }
+    ],
+    "7": [
+      {
+        "image_id": "page_7_image_1",
+        "page": 7,
+        "path": "output\\osi_images\\page_7_image_1.png",
+        "xref": 95,
+        "width": 661,
+        "height": 202,
+        "extension": "png",
+        "bbox": [
+          181.5749969482422,
+          432.0002136230469,
+          549.4500122070312,
+          544.7252197265625
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "the data is sensitive), and converted into bits (0’s and 1’s) so that",
+        "nearby_context": [
+          "Layer 6: Presentation Layer",
+          "it can be transmitted.",
+          "ThePresentation Layer is also called the Translation layer. The"
+        ],
+        "description": "Image related to 'the data is sensitive), and converted into bits (0’s and 1’s) so that'. Nearby text: Layer 6: Presentation Layer it can be transmitted. ThePresentation Layer is also called the Translation layer. The",
+        "description_source": "section_heading_and_context"
+      }
+    ],
+    "9": [
+      {
+        "image_id": "page_9_image_1",
+        "page": 9,
+        "path": "output\\osi_images\\page_9_image_1.png",
+        "xref": 108,
+        "width": 800,
+        "height": 200,
+        "extension": "png",
+        "bbox": [
+          181.5749969482422,
+          0.0,
+          549.449951171875,
+          91.79999542236328
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": null,
+        "nearby_context": [
+          "Application Layer",
+          "Functions of the Application Layer",
+          "The main functions of the application layer are given below."
+        ],
+        "description": "Image related to: Application Layer Functions of the Application Layer The main functions of the application layer are given below.",
+        "description_source": "nearby_context"
+      }
+    ],
+    "10": [
+      {
+        "image_id": "page_10_image_1",
+        "page": 10,
+        "path": "output\\osi_images\\page_10_image_1.png",
+        "xref": 112,
+        "width": 1326,
+        "height": 659,
+        "extension": "png",
+        "bbox": [
+          206.39999389648438,
+          224.63998413085938,
+          524.6400146484375,
+          382.79998779296875
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "Each layer adds specific information to ensure the data reaches its",
+        "nearby_context": [
+          "1 / 8",
+          "destination correctly, and these steps are reversed upon arrival.",
+          "We can understand how data flows through OSI Model with the"
+        ],
+        "description": "Image related to 'Each layer adds specific information to ensure the data reaches its'. Nearby text: 1 / 8 destination correctly, and these steps are reversed upon arrival. We can understand how data flows through OSI Model with the",
+        "description_source": "section_heading_and_context"
+      },
+      {
+        "image_id": "page_10_image_2",
+        "page": 10,
+        "path": "output\\osi_images\\page_10_image_2.png",
+        "xref": 114,
+        "width": 800,
+        "height": 400,
+        "extension": "png",
+        "bbox": [
+          207.22499084472656,
+          224.77500915527344,
+          523.7999877929688,
+          382.7250061035156
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "Each layer adds specific information to ensure the data reaches its",
+        "nearby_context": [
+          "1 / 8",
+          "destination correctly, and these steps are reversed upon arrival.",
+          "We can understand how data flows through OSI Model with the"
+        ],
+        "description": "Image related to 'Each layer adds specific information to ensure the data reaches its'. Nearby text: 1 / 8 destination correctly, and these steps are reversed upon arrival. We can understand how data flows through OSI Model with the",
+        "description_source": "section_heading_and_context"
+      }
+    ],
+    "11": [
+      {
+        "image_id": "page_11_image_1",
+        "page": 11,
+        "path": "output\\osi_images\\page_11_image_1.png",
+        "xref": 117,
+        "width": 1042,
+        "height": 745,
+        "extension": "png",
+        "bbox": [
+          181.5749969482422,
+          334.1250305175781,
+          549.449951171875,
+          596.7000122070312
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "reverse and decrypt the e-mail content. At last, the email will be",
+        "nearby_context": [
+          "shown on Person B email client.",
+          "reverse and decrypt the e-mail content. At last, the email will be",
+          "After the email reaches the receiver i.e. Person B, the process will"
+        ],
+        "description": "Image related to 'reverse and decrypt the e-mail content. At last, the email will be'. Nearby text: shown on Person B email client. reverse and decrypt the e-mail content. At last, the email will be After the email reaches the receiver i.e. Person B, the process will",
+        "description_source": "section_heading_and_context"
+      }
+    ],
+    "14": [
+      {
+        "image_id": "page_14_image_1",
+        "page": 14,
+        "path": "output\\osi_images\\page_14_image_1.png",
+        "xref": 149,
+        "width": 320,
+        "height": 180,
+        "extension": "png",
+        "bbox": [
+          184.9499969482422,
+          5.400146484375,
+          292.95001220703125,
+          66.150146484375
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": null,
+        "nearby_context": [
+          "OS an TC IP Mo (P 2)",
+          "Int to Mo Co",
+          ""
+        ],
+        "description": "Image related to: OS an TC IP Mo (P 2) Int to Mo Co ",
+        "description_source": "nearby_context"
+      },
+      {
+        "image_id": "page_14_image_2",
+        "page": 14,
+        "path": "output\\osi_images\\page_14_image_2.png",
+        "xref": 151,
+        "width": 320,
+        "height": 180,
+        "extension": "png",
+        "bbox": [
+          184.9499969482422,
+          98.55014038085938,
+          292.95001220703125,
+          159.30014038085938
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "OS an TC IP Mo (P 1)",
+        "nearby_context": [
+          "OS an TC IP Mo (P 1)",
+          "Int to Mo Co",
+          ""
+        ],
+        "description": "Image related to 'OS an TC IP Mo (P 1)'. Nearby text: OS an TC IP Mo (P 1) Int to Mo Co ",
+        "description_source": "section_heading_and_context"
+      },
+      {
+        "image_id": "page_14_image_3",
+        "page": 14,
+        "path": "output\\osi_images\\page_14_image_3.png",
+        "xref": 153,
+        "width": 320,
+        "height": 180,
+        "extension": "png",
+        "bbox": [
+          184.9499969482422,
+          191.025146484375,
+          292.95001220703125,
+          251.775146484375
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "OS an TC IP Mo (P 2)",
+        "nearby_context": [
+          "OSI and TCP IP Model (Part 1)",
+          "OS an TC IP Mo (P 2)",
+          "Visit Course"
+        ],
+        "description": "Image related to 'OS an TC IP Mo (P 2)'. Nearby text: OSI and TCP IP Model (Part 1) OS an TC IP Mo (P 2) Visit Course",
+        "description_source": "section_heading_and_context"
+      },
+      {
+        "image_id": "page_14_image_4",
+        "page": 14,
+        "path": "output\\osi_images\\page_14_image_4.png",
+        "xref": 154,
+        "width": 640,
+        "height": 480,
+        "extension": "png",
+        "bbox": [
+          331.42498779296875,
+          47.24998474121094,
+          544.0499877929688,
+          206.54998779296875
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "",
+        "nearby_context": [
+          "",
+          "",
+          " "
+        ],
+        "description": "Image related to ''. Nearby text:    ",
+        "description_source": "section_heading_and_context"
+      }
+    ],
+    "15": [
+      {
+        "image_id": "page_15_image_1",
+        "page": 15,
+        "path": "output\\osi_images\\page_15_image_1.png",
+        "xref": 191,
+        "width": 230,
+        "height": 32,
+        "extension": "png",
+        "bbox": [
+          27.0,
+          147.1509246826172,
+          182.25,
+          168.7509307861328
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "Explore",
+        "nearby_context": [
+          "Physical Layer",
+          "Legal",
+          "Job-A-Thon"
+        ],
+        "description": "Image related to 'Explore'. Nearby text: Physical Layer Legal Job-A-Thon",
+        "description_source": "section_heading_and_context"
+      },
+      {
+        "image_id": "page_15_image_2",
+        "page": 15,
+        "path": "output\\osi_images\\page_15_image_2.png",
+        "xref": 218,
+        "width": 101,
+        "height": 30,
+        "extension": "png",
+        "bbox": [
+          195.0749969482422,
+          307.8009033203125,
+          262.57501220703125,
+          327.37591552734375
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "Program",
+        "nearby_context": [
+          "Program",
+          "Interview",
+          "GATE"
+        ],
+        "description": "Image related to 'Program'. Nearby text: Program Interview GATE",
+        "description_source": "section_heading_and_context"
+      },
+      {
+        "image_id": "page_15_image_3",
+        "page": 15,
+        "path": "output\\osi_images\\page_15_image_3.png",
+        "xref": 220,
+        "width": 102,
+        "height": 30,
+        "extension": "png",
+        "bbox": [
+          270.0,
+          307.8009033203125,
+          336.8249816894531,
+          327.37591552734375
+        ],
+        "alt_text": null,
+        "caption": null,
+        "section_heading": "Program",
+        "nearby_context": [
+          "Program",
+          "Interview",
+          "GATE"
+        ],
+        "description": "Image related to 'Program'. Nearby text: Program Interview GATE",
+        "description_source": "section_heading_and_context"
+      }
+    ]
+  }
+}
